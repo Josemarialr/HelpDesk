@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['crear_ticket'])) {
             include_once('wirepusher.php');
             // Enviamos la notificación push usando tus parámetros
             list($http_status, $response) = Wirepusher::send(
-                "jFGKmpzJM",
+                "ID WIREPUSHER",
                 "Nuevo Ticket de " . $user_name,
                 "Asunto: " . $asunto,
                 'helpdesk',
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['crear_ticket'])) {
         }
 
         // Envío Telegram
-        $urlMsg = "https://api.telegram.org/bot5929151658:AAHZ6OYqyVnhYoHfreV4KLN86FvQlp0d2jE/sendMessage";
+        $urlMsg = "https://api.telegram.org/bot5929151658:TUTOKEN/sendMessage";
         $msg = "<b>📩 Nuevo Ticket Creado</b>\n";
         $msg .= "<b>Usuario:</b> " . htmlspecialchars($user_name) . "\n";
         $msg .= "<b>Asunto:</b> " . htmlspecialchars($asunto) . "\n";
